@@ -12,8 +12,8 @@ class Video_Processing:
         self.stopped = False
 
     def start(self):
-        th.Thread(target=self.update, args=()).start()
-        return self
+        self.thread = th.Thread(target=self.update, args=())
+        return self.thread.start()
 
     def update(self):
         ret, frame = self.stream.read()

@@ -1,7 +1,7 @@
 import socket as sk
-from Entity import Camera
-from Entity import Video_File
-from Handle import Send_Data
+
+from Servers.Entity import Camera
+from Servers.Handle import Send_Data
 
 IP = 'localhost'
 PORT = 5555
