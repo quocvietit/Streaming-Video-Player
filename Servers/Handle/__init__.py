@@ -1,2 +1,0 @@
-from SendData import Send_Data
-from VideoProcessing import Video_Processing

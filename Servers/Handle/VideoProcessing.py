@@ -35,9 +35,9 @@ class Video_Processing:
         self.stopped = True
 
     def stringData(self):
-        result, img_encode = cv2.imencode('.jpg', self.frame, self.endeco_params)
-        data = np.array(img_encode)
-        return data.tostring()
+        self.result, self.img_encode = cv2.imencode('.jpg', self.frame, self.endeco_params)
+        self.data = np.array(self.img_encode)
+        return self.data.tostring()
 
 
 

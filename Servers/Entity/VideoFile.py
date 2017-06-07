@@ -1,15 +1,20 @@
 import threading as th
 
-from Servers.Handle import Video_Processing
+from Servers.Handle.VideoProcessing import Video_Processing
 
-
-class Video_File:
+class Video_File():
     def __init__(self):
-        self.videoFile = Video_Processing("File name")
+        self.videoFile = Video_Processing("demo.mp4")
 
     def start(self):
-        th.Thread(target=self.update, args=()).start()
-        return self
+        self.thread = th.Thread(target=self.update, args=()).start()
+        return self.thread
 
     def update(self):
         self.videoFile.start()
+
+    def stop(self):
+        pass
+
+    def stringData(self):
+        return self.videoFile.stringData()
